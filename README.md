@@ -13,6 +13,7 @@ My solution to the [Art gallery website](https://www.frontendmentor.io/challenge
 - React
 - TypeScript
 - Tailwind CSS
+- Leaflet, with OpenStreetMap tiles
 
 ## Author
 
