@@ -1,3 +1,4 @@
+import { RouteTransitions } from "@/components/effects";
 import { openGraphBase, SITE_NAME, SITE_URL, twitterBase } from "@/data";
 import type { Metadata, Viewport } from "next";
 import { Big_Shoulders, Outfit } from "next/font/google";
@@ -46,7 +47,10 @@ export default function RootLayout({
       lang="en"
       className={`${bigShoulders.variable} ${outfit.variable} antialiased`}
     >
-      <body className="flex min-h-dvh flex-col">{children}</body>
+      <body className="flex min-h-dvh flex-col">
+        {children}
+        <RouteTransitions />
+      </body>
     </html>
   );
 }

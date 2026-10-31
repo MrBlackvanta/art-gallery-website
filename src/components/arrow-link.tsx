@@ -23,7 +23,7 @@ export default function ArrowLink({
   return (
     <Link
       href={href}
-      className={`group/arrow-link flex h-18 w-fit font-display text-button text-white uppercase focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink ${className}`}
+      className={`group/arrow-link flex h-18 w-fit font-display text-button text-white uppercase v-travelling-arrow-link focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink ${className}`}
     >
       {direction === "back" && arrow}
       <span className="flex items-center bg-ink px-8 transition-colors group-hover/arrow-link:bg-accent-deep">

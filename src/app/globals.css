@@ -144,3 +144,63 @@
       minmax(0, 445fr);
   }
 }
+
+@utility v-travelling-arrow-link {
+  :root[data-direction] & {
+    view-transition-name: arrow-link;
+  }
+}
+
+:root {
+  --travel: 1;
+  --scrollbar: 0px;
+  --page-turn-duration: 0.7s;
+  --page-turn-ease: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+:root[data-direction="back"] {
+  --travel: -1;
+}
+
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  clip-path: inset(0 var(--scrollbar) 0 0);
+}
+
+::view-transition-old(root) {
+  animation: v-page-leave var(--page-turn-duration) var(--page-turn-ease) both;
+}
+
+::view-transition-new(root) {
+  animation: v-page-arrive var(--page-turn-duration) var(--page-turn-ease) both;
+}
+
+::view-transition-group(arrow-link) {
+  animation-duration: var(--page-turn-duration);
+  animation-timing-function: var(--page-turn-ease);
+}
+
+::view-transition-old(arrow-link) {
+  display: none;
+}
+
+::view-transition-new(arrow-link) {
+  inline-size: auto;
+  animation: none;
+}
+
+@keyframes v-page-leave {
+  to {
+    translate: calc(var(--travel) * (var(--scrollbar) - 100%)) 0;
+  }
+}
+
+@keyframes v-page-arrive {
+  from {
+    translate: calc(var(--travel) * (100% - var(--scrollbar))) 0;
+  }
+}
