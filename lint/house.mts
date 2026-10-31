@@ -635,6 +635,10 @@ export function house({ overrides = [] }: { overrides?: Overrides } = {}): {
         "react/unsupported-syntax": "error",
         "import/no-anonymous-default-export": "error",
         "jsx-a11y/no-autofocus": ["error", { ignoreNonDOM: true }],
+        "jsx-a11y/no-noninteractive-tabindex": [
+          "error",
+          { tags: [], roles: ["tabpanel", "application"] },
+        ],
         "nextjs/no-img-element": "off",
         "unicorn/filename-case": ["error", { case: "kebabCase" }],
         "better-tailwindcss/enforce-canonical-classes": [
