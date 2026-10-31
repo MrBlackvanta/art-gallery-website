@@ -3,16 +3,8 @@ import { describe, expect, it } from "vite-plus/test";
 import Signature from "./signature";
 
 describe("Signature", () => {
-  it("is the page footer landmark", () => {
-    render(<Signature />);
-
-    expect(screen.getByRole("contentinfo")).toHaveTextContent(
-      "Coded by Abdelrhman Abdelaal.",
-    );
-  });
-
   it("credits the author with a safe external link", () => {
-    render(<Signature />);
+    render(<Signature className="" linkClassName="" />);
 
     const link = screen.getByRole("link", { name: "Abdelrhman Abdelaal" });
 

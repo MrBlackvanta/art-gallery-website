@@ -1,4 +1,6 @@
+import { FacebookIcon, InstagramIcon, TwitterIcon } from "@/components/icons";
 import type { Metadata } from "next";
+import type { SocialLink } from "./types";
 
 export const SITE_URL =
   "https://art-gallery-website.abdelrhman-ahmed8881.workers.dev";
@@ -23,3 +25,13 @@ export const twitterBase = {
   card: "summary_large_image",
   images: [shareImage],
 } satisfies Metadata["twitter"];
+
+export const socialLinks: SocialLink[] = [
+  { label: "Facebook", href: "https://www.facebook.com/", icon: FacebookIcon },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/",
+    icon: InstagramIcon,
+  },
+  { label: "Twitter", href: "https://x.com/", icon: TwitterIcon },
+];
