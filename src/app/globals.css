@@ -122,3 +122,25 @@
     color: transparent;
   }
 }
+
+@utility v-container {
+  @apply mx-auto w-full max-w-297.5 px-4 md:px-10;
+}
+
+@utility v-gallery {
+  @apply grid;
+
+  @variant md {
+    grid-template-columns:
+      minmax(0, 280fr)
+      minmax(0, 107fr)
+      minmax(0, 280fr);
+  }
+
+  @variant lg {
+    grid-template-columns:
+      minmax(0, 445fr)
+      minmax(0, 160fr)
+      minmax(0, 445fr);
+  }
+}
