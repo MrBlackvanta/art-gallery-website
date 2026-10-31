@@ -79,3 +79,46 @@
     @apply cursor-pointer;
   }
 }
+
+@utility v-hero {
+  @apply grid;
+  grid-template-columns:
+    [photo-start] 1rem
+    [copy-start] minmax(0, 1fr)
+    [copy-end] 1rem
+    [photo-end];
+
+  @variant md {
+    grid-template-columns:
+      [photo-start] minmax(0, 389fr)
+      [copy-start] 3rem
+      [photo-end] minmax(0, 291fr)
+      [copy-end] 2.5rem;
+    grid-template-rows: 1fr auto auto 1fr;
+  }
+
+  @variant lg {
+    --hero-band: 17.8125rem;
+    grid-template-columns:
+      [full-start] minmax(2.5rem, 1fr)
+      [content-start] var(--hero-band)
+      [photo-start] minmax(0, 29.6875rem)
+      [copy-start] 4.0625rem
+      [photo-end] 17.8125rem
+      [copy-end] minmax(2.5rem, 1fr)
+      [full-end];
+    grid-template-rows: 11.875rem auto 1fr;
+  }
+}
+
+@utility v-hero-title {
+  @variant lg {
+    background-image: linear-gradient(
+      to right,
+      var(--color-white) var(--hero-band),
+      var(--color-ink) var(--hero-band)
+    );
+    background-clip: text;
+    color: transparent;
+  }
+}
