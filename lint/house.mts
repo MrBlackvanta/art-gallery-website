@@ -487,7 +487,7 @@ function projectProblems(root: string) {
         `globals.css: --text-${name} and --color-${name} collide; text-${name} emits only the colour and drops the font-size. Rename the size.`,
       ]),
     [
-      /--font-[\w-]+\s*:\s*["']/.test(css),
+      /(?<![\w-])--font-(?![\w-]*--)[\w-]+\s*:\s*["']/.test(css),
       "globals.css: a font token must be var(--font-x); next/font hashes the family name, so a literal never resolves.",
     ],
     [

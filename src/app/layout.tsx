@@ -15,6 +15,7 @@ const bigShoulders = Big_Shoulders({
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
+  weight: "300",
   display: "swap",
 });
 
