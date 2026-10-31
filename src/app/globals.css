@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@source not "../../*.md";
+@source not "../../lint";
+@source not "../**/*.test.ts";
+@source not "../**/*.test.tsx";
+@source not "../test";
+@source not "../assets";
+@source not "./icon.svg";
+
+@theme inline {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-big-shoulders);
+}
+
+@theme {
+  --color-*: initial;
+  --color-ink: #151515;
+  --color-ink-soft: #444444;
+  --color-accent: #d5966c;
+  --color-white: #ffffff;
+}
+
+@layer base {
+  html {
+    @apply overflow-y-scroll;
+  }
+
+  body {
+    @apply bg-white text-ink;
+  }
+
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
